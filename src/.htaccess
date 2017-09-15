@@ -1,0 +1,19 @@
+RewriteEngine on
+Options -Indexes
+
+#forca utf-8
+<FilesMatch ".(htm|html|css|js|php)$">
+AddDefaultCharset UTF-8
+</FilesMatch>
+#Numeros
+#[0-9]+
+#Letras
+#[a-z]+
+#Desconsiderar case
+#[NC]
+
+# RewriteBase /
+#RewriteBase /dev_folder/
+
+RewriteRule ^public/count(|/)$ resources/CountResourcePublic.php [NC,L]
+RewriteRule ^public/contatos(|/)$ resources/ContatoResourcePublic.php [NC,L]
